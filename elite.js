@@ -1,9 +1,6 @@
 function el(name, html = "", attr = {}, events = {}, children = []) {
   let el = document.createElement(name)
 
-  // TODO use fragment to build offscreen DOM tree?
-  //let fragment = document.createDocumentFragment();
-
   if (html) {
     el.innerHTML = html
   }
@@ -21,7 +18,9 @@ function el(name, html = "", attr = {}, events = {}, children = []) {
   }
 
   if (children) {
-    children.forEach((element) => el.appendChild(element))
+    let frag = document.createDocumentFragment()
+    children.forEach(frag.appendChild)
+    el.appendChild(frag)
   }
 
   return el
@@ -34,6 +33,6 @@ function set(element, parent) {
 }
 
 function set_children(el, children) {
-  el.innerHTML = '';
+  el.innerHTML = ''
   children.forEach((p) => el.appendChild(p))
 }
