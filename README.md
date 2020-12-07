@@ -1,62 +1,44 @@
 # elite
 
-A minimal Javascript lib for declarative DOM building.
+Minimal declarative DOM lib in Javascript.
 
-## Why
+## What
 
-I wanted to split up some HTML, represented as various screens of a game i was, 
-working on, into separate files and render them based on some json. I looked 
-into a few technologies and frameworks, and was a bit overwhelmed. I wanted to 
-keep it simple, so i made the following, somewhat inspired by a talk given by 
-Magnar Sveen and somewhat inspired by Flutter. I found it fun to work on and it
-solved my problem and made my code cleaner and more maintainable. If not very 
-useful for others, i think it still might inspire to keep things simple and 
-still get things done.
+I wanted to split some HTML into separate files and render them given some JSON. 
+
+I wanted to keep it simple and avoid using a large framework. 
+
+This simple solution, somewhat inspired by a talk by Magnar Sveen and also Flutter, solved my problem and made my code neat.
+
+If not useful for others, maybe it can inspire for simpler solutions.
 
 ## API
 
-I only have two functions: `el` and `set`.
+`el` is a function for creating a DOM element with *html*, *attributes*, *events*, and *children*.
 
-`el` is a function for creating a DOM element with some attributes, some html 
-content, events, and children.
+`set` is for setting an element as the child of a given parent.
 
-`set` is for setting a created element as the child of a given parent, whilst 
-clearing the parent.
+`set_children` is for setting an array of elements to a given parent.
 
 ## Example
 
-``` Javascript
+See [example.html](example.html)
 
-const startPage = 
-el('section', {}, '', {}, [
-    el('h1', { class: 'green' }, 'My Game'),
-    el('p', {}, 'Welcome to my game!'),
-    el('form', {}, '', newGameEvent, [
-        el('button', {}, 'New game')
+```Javascript
+const page = el('section', '', {}, {}, [
+    el('h1', 'elite'),
+    el('p', 'Welcome to elite'),
+    el('form', '', {}, gameEvent, [
+        el('button', 'New game')
     ]),
     el('br'),
-    el('form', {}, '', joinGameEvent, [
-        el('label', { for: 'code' }, 'Join game'),
+    el('form', '', {}, gameEvent, [
+        el('label', 'Join game', { for: 'code' }),
         el('br'),
-        el('input', { id: 'code', placeholder: 'Enter code', required: true }),
+        el('input', '', { id: 'code', placeholder: 'Enter code', required: true }),
         el('br'),
-        el('button', {}, 'Join'),
+        el('button', 'Join'),
     ]),
 ])
-
-const newGameEvent = {
-    submit: (e) => {
-        e.preventDefault();
-        const message = {
-            type: 'new_game',
-            playerId: playerId,
-            gameId: '',
-            data: {}
-        };
-        ws.send(JSON.stringify(message));
-    }
-}
-
-set(startPage, container)
-
+set(page, 'container')
 ```
