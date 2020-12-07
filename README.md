@@ -4,9 +4,7 @@ Minimal declarative DOM lib in Javascript.
 
 ## What
 
-I wanted to split some HTML into separate files and render them given some JSON. 
-
-I wanted to keep it simple and avoid using a large framework. 
+I wanted to split some HTML into separate files and render them given some JSON, whilst avoiding using any large frameworks. 
 
 This simple solution, somewhat inspired by a talk by Magnar Sveen and also Flutter, solved my problem and made my code neat.
 
