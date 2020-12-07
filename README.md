@@ -2,7 +2,7 @@
 
 Minimal declarative DOM lib in Javascript.
 
-## What
+## Why
 
 I wanted to split some HTML into separate files and render them given some JSON, whilst avoiding using any large frameworks. 
 
@@ -17,6 +17,8 @@ If not useful for others, maybe it can inspire for simpler solutions.
 `set` is for setting an element as the child of a given parent.
 
 `set_children` is for setting an array of elements to a given parent.
+
+I use `Document.createDocumentFragment` to build an offscreen DOM tree for performance.
 
 ## Example
 
