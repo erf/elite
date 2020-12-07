@@ -19,7 +19,7 @@ function el(name, html = "", attr = {}, events = {}, children = []) {
 
   if (children) {
     let frag = document.createDocumentFragment()
-    children.forEach(frag.appendChild)
+    children.forEach(child => frag.appendChild(child))
     el.appendChild(frag)
   }
 
