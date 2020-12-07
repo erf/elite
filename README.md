@@ -12,11 +12,9 @@ If not useful for others, maybe it can inspire for simpler solutions.
 
 ## API
 
-`el` is a function for creating a DOM element with *html*, *attributes*, *events*, and *children*.
+`el` create a DOM element with *html*, *attributes*, *events*, and *children*.
 
-`set` is for setting an element as the child of a given parent.
-
-`set_children` is for setting an array of elements to a given parent.
+`set` clear and append a single or multiple elements to a given parent.
 
 I use `Document.createDocumentFragment` to build an offscreen DOM tree for performance.
 

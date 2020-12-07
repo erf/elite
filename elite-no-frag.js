@@ -18,9 +18,7 @@ function el(name, html = "", attr = {}, events = {}, children = []) {
   }
 
   if (children) {
-    let frag = document.createDocumentFragment()
-    children.forEach(child => frag.appendChild(child))
-    el.appendChild(frag)
+    children.forEach(child => el.appendChild(child))
   }
 
   return el
@@ -30,9 +28,7 @@ function set(element, parent) {
   let el = typeof parent === "string" ? document.getElementById(parent) : parent
   el.innerHTML = ''
   if (Array.isArray(element)) {
-    let frag = document.createDocumentFragment()
-    element.forEach(child => frag.appendChild(child))
-    el.appendChild(frag)
+    element.forEach(child => el.appendChild(child))
   } else {
     el.appendChild(element)
   }
