@@ -34,5 +34,5 @@ function set(element, parent) {
 
 function set_children(el, children) {
   el.innerHTML = ''
-  children.forEach((p) => el.appendChild(p))
+  children.forEach(child => el.appendChild(child))
 }
