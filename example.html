@@ -1,41 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <title>elite - example</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style></style>
-</head>
+<title>elite - example</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div id='app'></div>
 
-<body>
-    <div id='app'></div>
-
-    <script src="elite.js"></script>
-    <script>
-        const gameEvent = {
-            submit: (e) => {
-                e.preventDefault()
-                console.log('game event!')
-            }
+<script src="elite.js"></script>
+<script>
+    const gameEvent = {
+        submit: (e) => {
+            e.preventDefault()
+            console.log('game event!')
         }
-        const page = el('section', '', {}, {}, [
-            el('h1', 'elite'),
-            el('p', 'Welcome to elite'),
-            el('form', '', {}, gameEvent, [
-                el('button', 'New game')
-            ]),
+    }
+    const page = el('section', '', {}, {}, [
+        el('h1', 'elite'),
+        el('p', 'Welcome to elite'),
+        el('form', '', {}, gameEvent, [
+            el('button', 'New game')
+        ]),
+        el('br'),
+        el('form', '', {}, gameEvent, [
+            el('label', 'Join game', { for: 'code' }),
             el('br'),
-            el('form', '', {}, gameEvent, [
-                el('label', 'Join game', { for: 'code' }),
-                el('br'),
-                el('input', '', { id: 'code', placeholder: 'Enter code', required: true }),
-                el('br'),
-                el('button', 'Join'),
-            ]),
-        ])
-        set(page, 'app')
-    </script>
-</body>
-
-</html>
+            el('input', '', { id: 'code', placeholder: 'Enter code', required: true }),
+            el('br'),
+            el('button', 'Join'),
+        ]),
+    ])
+    set(page, 'app')
+</script>
