@@ -16,7 +16,7 @@ If not useful for others, maybe it can inspire for simpler solutions.
 
 `set` clear and append a single or multiple elements to a given parent.
 
-I use `Document.createDocumentFragment` to build an offscreen DOM tree for performance.
+I use `Document.createDocumentFragment` to build children in a offscreen DOM tree for perf.
 
 ## Example
 
