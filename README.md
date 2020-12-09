@@ -8,8 +8,6 @@ I wanted to split some HTML into separate files and render them given some JSON,
 
 This simple solution, somewhat inspired by a talk by Magnar Sveen and also Flutter, solved my problem and made my code neat.
 
-If not useful for others, maybe it can inspire for simpler solutions.
-
 ## API
 
 `el` create a DOM element with *html*, *attributes*, *events*, and *children*.
