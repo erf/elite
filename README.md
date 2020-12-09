@@ -8,6 +8,8 @@ I wanted to split some HTML into separate files and render them given some JSON,
 
 This simple solution, somewhat inspired by a talk by Magnar Sveen and also Flutter, solved my problem and made my code neat.
 
+I build parts of my web app as `el` blocks given som JSON and import them as needed as ES6 modules.
+
 ## API
 
 `el` create a DOM element with *html*, *attributes*, *events*, and *children*.
