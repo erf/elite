@@ -48,7 +48,7 @@ function el(tag, ...args) {
  */
 function set(element, parent) {
 
-  let el = typeof parent === "string" ? document.getElementById(parent) : parent
+  const el = typeof parent === "string" ? document.getElementById(parent) : parent
 
   el.innerHTML = ''
 
