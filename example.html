@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div id='app'></div>
 
+<style>
+    body {
+        font-family: sans-serif;
+    }
+
+    .elite {
+        color: red;
+        font-weight: 400;
+    }
+</style>
+
 <script src="elite.js"></script>
 <script>
     const formEvent = {
@@ -14,7 +25,7 @@
         }
     }
     const page = el('section', [
-        el('h1', 'elite'),
+        el('h1', 'elite', { class: 'elite' }),
         el('p', 'Welcome to elite'),
         el('form', '', {}, formEvent, [
             el('button', 'New game')

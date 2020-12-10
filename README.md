@@ -31,7 +31,7 @@ See [example.html](example.html)
 
 ```Javascript
 const page = el('section', [
-    el('h1', 'elite'),
+    el('h1', 'elite', { class: 'elite' }),
     el('p', 'Welcome to elite'),
     el('form', '', {}, gameEvent, [
         el('button', 'New game')
