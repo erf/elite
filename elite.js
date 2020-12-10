@@ -12,30 +12,18 @@
  * @param {Array} children
  */
 function el(tag, ...args) {
-
   const el = document.createElement(tag)
-
   const ops = [
     (html) => el.innerHTML = html,
-    (attributes) => {
-      for (const [key, value] of Object.entries(attributes)) {
-        el.setAttribute(key, value)
-      }
-    },
-    (events) => {
-      for (const [key, value] of Object.entries(events)) {
-        el.addEventListener(key, value)
-      }
-    },
-    (children) => {
+    (at) => Object.entries(at).forEach(([k, v]) => el.setAttribute(k, v)),
+    (ev) => Object.entries(ev).forEach(([k, v]) => el.addEventListener(k, v)),
+    (ch) => {
       const frag = document.createDocumentFragment()
-      children.forEach(child => frag.appendChild(child))
+      ch.forEach(child => frag.appendChild(child))
       el.appendChild(frag)
     },
   ];
-
   args.forEach((a, i) => Array.isArray(a) ? ops[3](a) : ops[i](a))
-
   return el
 }
 
@@ -47,17 +35,13 @@ function el(tag, ...args) {
  * @param {Element|string} parent
  */
 function set(element, parent) {
-
   const el = typeof parent === "string" ? document.getElementById(parent) : parent
-
   el.innerHTML = ''
-
   if (Array.isArray(element)) {
     const frag = document.createDocumentFragment()
     element.forEach(child => frag.appendChild(child))
     el.appendChild(frag)
     return
   }
-
   el.appendChild(element)
 }
