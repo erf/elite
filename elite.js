@@ -1,39 +1,63 @@
-function el(name, html = "", attr = {}, events = {}, children = []) {
-  let el = document.createElement(name)
+/**
+ * Create an *element* given a *tag name* and an optional *innerHtml*,
+ * *attributes*, *events* and *children*.
+ *
+ * Arguments after *tag* can be omitted and replaced with children as the last
+ * argument.
+ *
+ * @param {string} tag
+ * @param {string|Array} html
+ * @param {object|Array} attributes
+ * @param {object|Array} events
+ * @param {Array} children
+ */
+function el(tag, ...args) {
 
-  if (html) {
-    el.innerHTML = html
-  }
+  const el = document.createElement(tag)
 
-  if (attr) {
-    for (let [key, value] of Object.entries(attr)) {
-      el.setAttribute(key, value)
-    }
-  }
+  const ops = [
+    (html) => el.innerHTML = html,
+    (attributes) => {
+      for (const [key, value] of Object.entries(attributes)) {
+        el.setAttribute(key, value)
+      }
+    },
+    (events) => {
+      for (const [key, value] of Object.entries(events)) {
+        el.addEventListener(key, value)
+      }
+    },
+    (children) => {
+      const frag = document.createDocumentFragment()
+      children.forEach(child => frag.appendChild(child))
+      el.appendChild(frag)
+    },
+  ];
 
-  if (events) {
-    for (let [key, value] of Object.entries(events)) {
-      el.addEventListener(key, value)
-    }
-  }
-
-  if (children) {
-    let frag = document.createDocumentFragment()
-    children.forEach(child => frag.appendChild(child))
-    el.appendChild(frag)
-  }
+  args.forEach((a, i) => Array.isArray(a) ? ops[3](a) : ops[i](a))
 
   return el
 }
 
+/**
+ * Replace the innerHTML of a given parent element with either a single element
+ * or an Array of elements.
+ *
+ * @param {Element|Array} element
+ * @param {Element|string} parent
+ */
 function set(element, parent) {
+
   let el = typeof parent === "string" ? document.getElementById(parent) : parent
+
   el.innerHTML = ''
+
   if (Array.isArray(element)) {
-    let frag = document.createDocumentFragment()
+    const frag = document.createDocumentFragment()
     element.forEach(child => frag.appendChild(child))
     el.appendChild(frag)
-  } else {
-    el.appendChild(element)
+    return
   }
+
+  el.appendChild(element)
 }

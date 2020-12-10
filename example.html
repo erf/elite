@@ -7,20 +7,20 @@
 
 <script src="elite.js"></script>
 <script>
-    const gameEvent = {
+    const formEvent = {
         submit: (e) => {
             e.preventDefault()
-            console.log('game event!')
+            console.log('event!')
         }
     }
-    const page = el('section', '', {}, {}, [
+    const page = el('section', [
         el('h1', 'elite'),
         el('p', 'Welcome to elite'),
-        el('form', '', {}, gameEvent, [
+        el('form', '', {}, formEvent, [
             el('button', 'New game')
         ]),
         el('br'),
-        el('form', '', {}, gameEvent, [
+        el('form', '', {}, formEvent, [
             el('label', 'Join game', { for: 'code' }),
             el('br'),
             el('input', '', { id: 'code', placeholder: 'Enter code', required: true }),

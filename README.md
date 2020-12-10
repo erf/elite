@@ -1,29 +1,36 @@
 # elite
 
-Minimal declarative DOM lib in Javascript.
+Minimal declarative JS DOM library
 
 ## Why
 
-I wanted to split some HTML into separate files and render them given some JSON, whilst avoiding using any large frameworks. 
+I wanted to split some HTML into separate files and render them given some JSON, 
+whilst avoiding using any large frameworks.
 
-This simple solution, somewhat inspired by a talk by Magnar Sveen and also Flutter, solved my problem and made my code neat.
+This simple solution, somewhat inspired by a talk by Magnar Sveen and Flutter, 
+solved my problem and made my code neat.
 
-I build parts of my web app as `el` blocks given som JSON and import them as needed as ES6 modules.
+I composed parts of a web app as `el` blocks given some JSON and import them as 
+ES6 modules.
 
 ## API
 
-`el` create a DOM element with *html*, *attributes*, *events*, and *children*.
+`el` create a DOM element with a given *tag*, *innerHTML*, *attributes*, 
+*events*, and *children*.
 
-`set` clear and append a single or multiple elements to a given parent.
+You can omit all arguments after *tag* and replace them with *children* instead.
 
-I use `Document.createDocumentFragment` to build children in a offscreen DOM tree for perf.
+`set` replaces the innerHTML of a parent element (or id) with a given element 
+or array of elements.
+
+I use `Document.createDocumentFragment` to build children for performance.
 
 ## Example
 
 See [example.html](example.html)
 
 ```Javascript
-const page = el('section', '', {}, {}, [
+const page = el('section', [
     el('h1', 'elite'),
     el('p', 'Welcome to elite'),
     el('form', '', {}, gameEvent, [
