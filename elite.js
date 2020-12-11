@@ -15,11 +15,7 @@ function el(tag, ...args) {
     (html) => el.innerHTML = html,
     (attributes) => Object.entries(attributes).forEach(([k, v]) => el.setAttribute(k, v)),
     (events) => Object.entries(events).forEach(([k, v]) => el.addEventListener(k, v)),
-    (children) => {
-      const fragment = document.createDocumentFragment()
-      children.forEach(child => fragment.appendChild(child))
-      el.appendChild(fragment)
-    },
+    (children) => children.forEach(child => el.appendChild(child)),
   ];
   args.forEach((a, i) => Array.isArray(a) ? ops[3](a) : ops[i](a))
   return el
@@ -35,10 +31,8 @@ function set(element, parent) {
   const el = typeof parent === "string" ? document.getElementById(parent) : parent
   el.innerHTML = ''
   if (Array.isArray(element)) {
-    const fragment = document.createDocumentFragment()
-    element.forEach(child => fragment.appendChild(child))
-    el.appendChild(fragment)
-    return
+    element.forEach(child => el.appendChild(child))
+  } else {
+    el.appendChild(element)
   }
-  el.appendChild(element)
 }

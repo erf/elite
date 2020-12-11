@@ -22,8 +22,6 @@ You can omit arguments after *tag* and replace with *children*.
 
 `set` replaces the innerHTML of a parent with a given element or array of elements.
 
-I build children using `Document.createDocumentFragment` for performance.
-
 ## Example
 
 See [example.html](example.html)
