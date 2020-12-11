@@ -18,7 +18,7 @@ ES6 modules.
 `el` create a DOM element with a given *tag*, *innerHTML*, *attributes*, 
 *events*, and *children*.
 
-You can omit all arguments after *tag* and replace them with *children* instead.
+You can omit arguments after *tag* and replace with *children*.
 
 `set` replaces the innerHTML of a parent element (or id) with a given element 
 or array of elements.
