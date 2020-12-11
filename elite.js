@@ -15,12 +15,12 @@ function el(tag, ...args) {
   const el = document.createElement(tag)
   const ops = [
     (html) => el.innerHTML = html,
-    (at) => Object.entries(at).forEach(([k, v]) => el.setAttribute(k, v)),
-    (ev) => Object.entries(ev).forEach(([k, v]) => el.addEventListener(k, v)),
-    (ch) => {
-      const frag = document.createDocumentFragment()
-      ch.forEach(child => frag.appendChild(child))
-      el.appendChild(frag)
+    (attributes) => Object.entries(attributes).forEach(([k, v]) => el.setAttribute(k, v)),
+    (events) => Object.entries(events).forEach(([k, v]) => el.addEventListener(k, v)),
+    (children) => {
+      const fragment = document.createDocumentFragment()
+      children.forEach(child => fragment.appendChild(child))
+      el.appendChild(fragment)
     },
   ];
   args.forEach((a, i) => Array.isArray(a) ? ops[3](a) : ops[i](a))
@@ -38,9 +38,9 @@ function set(element, parent) {
   const el = typeof parent === "string" ? document.getElementById(parent) : parent
   el.innerHTML = ''
   if (Array.isArray(element)) {
-    const frag = document.createDocumentFragment()
-    element.forEach(child => frag.appendChild(child))
-    el.appendChild(frag)
+    const fragment = document.createDocumentFragment()
+    element.forEach(child => fragment.appendChild(child))
+    el.appendChild(fragment)
     return
   }
   el.appendChild(element)
