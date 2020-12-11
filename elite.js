@@ -1,9 +1,7 @@
 /**
- * Create an *element* given a *tag name* and an optional *innerHtml*,
- * *attributes*, *events* and *children*.
+ * Create an *element* given a *tag name* and an optional *innerHtml*, *attributes*, *events* and *children*.
  *
- * Arguments after *tag* can be omitted and replaced with children as the last
- * argument.
+ * Arguments after *tag* can be omitted and replaced with children as the last argument.
  *
  * @param {string} tag
  * @param {string|Array} html
@@ -28,8 +26,7 @@ function el(tag, ...args) {
 }
 
 /**
- * Replace the innerHTML of a given parent element with either a single element
- * or an Array of elements.
+ * Replace the innerHTML of a given parent element with either a single element or an Array of elements.
  *
  * @param {Element|Array} element
  * @param {Element|string} parent
