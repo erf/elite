@@ -1,6 +1,6 @@
 # elite
 
-Tiny declarative JS DOM library
+Tiny declarative JS DOM lib
 
 > < 7kb minified and only two functions: **el** and **set**
 
