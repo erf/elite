@@ -20,8 +20,7 @@ ES6 modules.
 
 You can omit arguments after *tag* and replace with *children*.
 
-`set` replaces the innerHTML of a parent element (or id) with a given element 
-or array of elements.
+`set` replaces the innerHTML of a parent with a given element or array of elements.
 
 I build children using `Document.createDocumentFragment` for performance.
 
