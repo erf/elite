@@ -14,15 +14,15 @@ I now compose parts of my web app using `el` blocks given some JSON and import t
 
 ## API
 
-`el` create an element with a given **tag**, **html**, **attributes**, **events**, and **children**.
+`el` create an element with a given *tag*, *html*, *attributes*, *events*, and *children*.
 
-You can omit arguments after **tag** and replace with **children**.
+You can omit arguments after *tag* and replace with *children*.
 
-`set` replaces the `innerHTML` of a parent with a given element or array of elements.
+`set` replaces the *innerHTML* of a parent with a given element or array of elements.
 
-`get` uses `document.getElementById` to get an element by id.
+`get` uses *getElementById* to get an element by id.
 
-`add` appends an element or an array of elements using `Node.appendChild` and returns the parent.
+`add` uses *appendChild* to append an element or an array of elements then returns the parent.
 
 ## Example
 
