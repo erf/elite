@@ -6,15 +6,15 @@ Tiny declarative JS DOM lib
 
 ## Why
 
-I wanted to split some HTML into separate files and render them given some JSON, whilst avoiding using a large framework.
+I wanted to split HTML into separate files and render them given some JSON without having to use a framework.
 
-I came up with this simple solution, somewhat inspired by a talk by Magnar Sveen and Flutter, which made my code neat.
+I came up with this solution to make my code cleaner, inspired by Flutter and a lecture by Magnar Sveen.
 
-I now compose parts of my web app using `el` blocks given some JSON and import them as ES6 modules by adding `export` to functions.
+I now compose parts of my web app using 'el' blocks, given some JSON and import them as ES6 modules.
 
 ## API
 
-`el` create an element with a given *tag*, *html*, *attributes*, *events*, and *children*. You can omit arguments after *tag* and replace with *children*.
+`el` creates an element with a given *tag*, *html*, *attributes*, *events*, and *children*. You can omit arguments after *tag* and replace with *children*.
 
 `set` replaces the *innerHTML* of a parent element or id with the given child element(s).
 
