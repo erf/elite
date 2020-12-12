@@ -39,11 +39,9 @@ function get(id) {
  * @returns {Element} The parent element
  */
 function add(parent, child) {
-  if (Array.isArray(child)) {
-    child.forEach(child => parent.appendChild(child))
-  } else {
-    parent.appendChild(child)
-  }
+  Array.isArray(child)
+    ? child.forEach(child => parent.appendChild(child))
+    : parent.appendChild(child)
   return parent
 }
 
