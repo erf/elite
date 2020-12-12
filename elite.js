@@ -16,7 +16,7 @@ function el(tag, ...args) {
     (at) => Object.entries(at).forEach(([k, v]) => el.setAttribute(k, v)),
     (ev) => Object.entries(ev).forEach(([k, v]) => el.addEventListener(k, v)),
     (children) => children.forEach(child => el.appendChild(child)),
-  ];
+  ]
   args.forEach((a, i) => Array.isArray(a) ? ops[3](a) : ops[i](a))
   return el
 }
