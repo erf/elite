@@ -10,17 +10,17 @@ I wanted to split some HTML into separate files and render them given some JSON,
 
 I came up with this simple solution, somewhat inspired by a talk by Magnar Sveen and Flutter, which made my code neat.
 
-I now compose parts of my web app using `el` blocks given some JSON and import them as ES6 modules.
+I now compose parts of my web app using `el` blocks given some JSON and import them as ES6 modules by adding `export` to functions.
 
 ## API
 
 `el` create an element with a given *tag*, *html*, *attributes*, *events*, and *children*. You can omit arguments after *tag* and replace with *children*.
 
-`set` replaces the *innerHTML* of a parent with a given element or array of elements.
+`set` replaces the *innerHTML* of a parent with the given child element(s).
 
-`get` uses *getElementById* to get an element by id.
+`get` is a shorthand for *document.getElementById*
 
-`add` uses *appendChild* to append an element or an array of elements then returns the parent.
+`add` uses *Node.appendChild* to append a child element(s) and return the parent.
 
 ## Example
 
