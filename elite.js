@@ -22,17 +22,26 @@ function el(tag, ...args) {
 }
 
 /**
+ * Shorthand for document.getElementById
+ * 
+ * @param {string} id - the element id
+ */
+function get(id) {
+  return document.getElementById(id)
+}
+
+/**
  * Replace the innerHTML of a given parent element with either a single element or an Array of elements.
  *
- * @param {(Element|Array.<Element>)} element - the element or array of elements we wants to set
- * @param {(Element|string)} parent - the parent element or its id we want to set element to
+ * @param {(Element|Array.<Element>)} child - the child element or array of elements we want to set
+ * @param {(Element|String)} parent - the parent element or element id
  */
-function set(element, parent) {
-  const el = typeof parent === "string" ? document.getElementById(parent) : parent
-  el.innerHTML = ''
-  if (Array.isArray(element)) {
-    element.forEach(child => el.appendChild(child))
+function set(child, parent) {
+  parent = typeof parent === 'string' ? get(parent) : parent
+  parent.innerHTML = ''
+  if (Array.isArray(child)) {
+    child.forEach(child => parent.appendChild(child))
   } else {
-    el.appendChild(element)
+    parent.appendChild(child)
   }
 }

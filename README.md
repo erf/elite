@@ -2,24 +2,25 @@
 
 Tiny declarative JS DOM lib
 
-> < 7kb minified and only two functions: **el** and **set**
+> < 8 KB minified and only 3 functions
 
 ## Why
 
-I wanted to split some HTML into separate files and render them given some JSON, whilst avoiding using any large frameworks.
+I wanted to split some HTML into separate files and render them given some JSON, whilst avoiding using a large framework.
 
-This simple solution, somewhat inspired by a talk by Magnar Sveen and Flutter, solved my problem and made my code neat.
+I came up with this simple solution, somewhat inspired by a talk by Magnar Sveen and Flutter, which made my code neat.
 
-I now compose parts of a my web app using `el` blocks given some JSON in a separate file and import them as ES6 modules.
+I now compose parts of my web app using `el` blocks given some JSON and import them as ES6 modules.
 
 ## API
 
-`el` create an element with a given **tag**, **html**, **attributes**, 
-**events**, and **children**.
+`el` create an element with a given **tag**, **html**, **attributes**, **events**, and **children**.
 
 You can omit arguments after **tag** and replace with **children**.
 
 `set` replaces the **innerHTML** of a **parent** with a given **element** or array of **elements**.
+
+`get` is just short for `document.getElementById`
 
 ## Example
 
@@ -41,5 +42,5 @@ const page = el('section', [
         el('button', 'Join'),
     ]),
 ])
-set(page, 'page')
+set(page, get('page'))
 ```
