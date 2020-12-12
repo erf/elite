@@ -26,7 +26,7 @@
     }
     const page = el('section', [
         el('h1', 'elite', { class: 'elite' }),
-        el('p', 'Welcome to elite'),
+        el('p', 'neat DOM manipulation'),
         el('form', '', {}, formEvent, [
             el('button', 'New game')
         ]),
@@ -38,6 +38,12 @@
             el('br'),
             el('button', 'Join'),
         ]),
+        el('br')
     ])
-    set(page, 'app')
+    const bottom = add(page, el('div', 'bottom', [
+        el('p', 'added element')
+    ]))
+
+    set('app', bottom)
+
 </script>

@@ -2,7 +2,7 @@
 
 Tiny declarative JS DOM lib
 
-> < 8 KB minified and only 3 functions
+> < 8 KB minified and only 4 functions
 
 ## Why
 
@@ -20,7 +20,9 @@ You can omit arguments after **tag** and replace with **children**.
 
 `set` replaces the **innerHTML** of a **parent** with a given **element** or array of **elements**.
 
-`get` is just short for `document.getElementById`
+`get` uses `document.getElementById` to get an element by id.
+
+`add` appends an element using `Node.appendChild` and returns the parent.
 
 ## Example
 
@@ -42,5 +44,5 @@ const page = el('section', [
         el('button', 'Join'),
     ]),
 ])
-set(page, get('page'))
+set('page', page))
 ```

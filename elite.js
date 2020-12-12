@@ -13,16 +13,32 @@ function el(tag, ...args) {
   const el = document.createElement(tag)
   const ops = [
     (html) => el.innerHTML = html,
-    (attributes) => Object.entries(attributes).forEach(([k, v]) => el.setAttribute(k, v)),
-    (events) => Object.entries(events).forEach(([k, v]) => el.addEventListener(k, v)),
-    (children) => children.forEach(child => el.appendChild(child)),
+    (at) => Object.entries(at).forEach(([k, v]) => el.setAttribute(k, v)),
+    (ev) => Object.entries(ev).forEach(([k, v]) => el.addEventListener(k, v)),
+    (children) => children.forEach(child => add(el, child)),
   ];
   args.forEach((a, i) => Array.isArray(a) ? ops[3](a) : ops[i](a))
   return el
 }
 
 /**
- * Shorthand for document.getElementById
+ * Replace the innerHTML of an element with a element / array of elements.
+ *
+ * @param {(Element|String)} parent - the parent element or element id
+ * @param {(Element|Array.<Element>)} child - the child element or array of elements we want to set
+ */
+function set(parent, child) {
+  parent = typeof parent === 'string' ? get(parent) : parent
+  parent.innerHTML = ''
+  if (Array.isArray(child)) {
+    child.forEach(child => add(parent, child))
+  } else {
+    add(parent, child)
+  }
+}
+
+/**
+ * Get an element by id using document.getElementById.
  * 
  * @param {string} id - the element id
  */
@@ -31,17 +47,14 @@ function get(id) {
 }
 
 /**
- * Replace the innerHTML of a given parent element with either a single element or an Array of elements.
- *
- * @param {(Element|Array.<Element>)} child - the child element or array of elements we want to set
- * @param {(Element|String)} parent - the parent element or element id
+ * Adds a child to a parent element using appendChild.
+ * 
+ * @param {Element} parent - the parent Element
+ * @param {Element} child - the Element we want to add to the parent
+ * 
+ * @returns {Element} The parent element
  */
-function set(child, parent) {
-  parent = typeof parent === 'string' ? get(parent) : parent
-  parent.innerHTML = ''
-  if (Array.isArray(child)) {
-    child.forEach(child => parent.appendChild(child))
-  } else {
-    parent.appendChild(child)
-  }
+function add(parent, child) {
+  parent.appendChild(child)
+  return parent
 }
