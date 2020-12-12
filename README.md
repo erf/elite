@@ -14,9 +14,7 @@ I now compose parts of my web app using `el` blocks given some JSON and import t
 
 ## API
 
-`el` create an element with a given *tag*, *html*, *attributes*, *events*, and *children*.
-
-You can omit arguments after *tag* and replace with *children*.
+`el` create an element with a given *tag*, *html*, *attributes*, *events*, and *children*. You can omit arguments after *tag* and replace with *children*.
 
 `set` replaces the *innerHTML* of a parent with a given element or array of elements.
 
