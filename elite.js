@@ -22,22 +22,6 @@ function el(tag, ...args) {
 }
 
 /**
- * Replace the innerHTML of an element with a element / array of elements.
- *
- * @param {(Element|String)} parent - the parent element or element id
- * @param {(Element|Array.<Element>)} child - the child element or array of elements we want to set
- */
-function set(parent, child) {
-  parent = typeof parent === 'string' ? get(parent) : parent
-  parent.innerHTML = ''
-  if (Array.isArray(child)) {
-    child.forEach(child => add(parent, child))
-  } else {
-    parent.appendChild(child)
-  }
-}
-
-/**
  * Get an element by id using document.getElementById.
  * 
  * @param {string} id - the element id
@@ -47,14 +31,30 @@ function get(id) {
 }
 
 /**
- * Adds a child to a parent element using appendChild.
+ * Adds a child or an array of children to a parent element using appendChild.
  * 
  * @param {Element} parent - the parent Element
- * @param {Element} child - the Element we want to add to the parent
+ * @param {Element|Array.<Element>} child - the Element or array of Elements we want to add to the parent
  * 
  * @returns {Element} The parent element
  */
 function add(parent, child) {
-  parent.appendChild(child)
+  if (Array.isArray(child)) {
+    child.forEach(child => parent.appendChild(child))
+  } else {
+    parent.appendChild(child)
+  }
   return parent
+}
+
+/**
+ * Replace the innerHTML of an element with an element or an array of elements.
+ *
+ * @param {(Element|String)} parent - the parent element or element id
+ * @param {(Element|Array.<Element>)} child - the child element or array of elements we want to set
+ */
+function set(parent, child) {
+  parent = typeof parent === 'string' ? get(parent) : parent
+  parent.innerHTML = ''
+  add(parent, child)
 }
