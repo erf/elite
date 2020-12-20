@@ -6,11 +6,11 @@ Tiny declarative JS DOM lib
 
 ## Why
 
-I wanted to split HTML into separate files and render them given some JSON without having to use a framework.
+I wanted to cleanup my web app without using a big framework.
 
-I came up with this solution to make my code cleaner, inspired by Flutter and a lecture by Magnar Sveen.
+I came up with this simple solution, inspired by Flutter and a lecture by Magnar Sveen.
 
-I now compose parts of my web app using 'el' blocks, given some JSON and import them as ES6 modules.
+I now compose parts of my web app declaratively using 'el' blocks, given some JSON and import them as ES6 modules.
 
 ## API
 
