@@ -1,16 +1,8 @@
 # elite
 
-Tiny declarative JS DOM lib
+tiny declarative javascript dom lib
 
 > < 8 KB minified and only 4 functions
-
-## Why
-
-I wanted to cleanup my web app without using a big framework.
-
-I came up with this simple solution, inspired by Flutter and a lecture by Magnar Sveen.
-
-I now compose parts of my web app declaratively using 'el' blocks, given some JSON and import them as ES6 modules.
 
 ## API
 
