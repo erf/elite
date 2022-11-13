@@ -24,7 +24,8 @@
         submit: (e) => {
             e.preventDefault()
             const val = get('input').value
-            alert(`Welcome to elite ${val} !`)
+            const welcome = `Welcome to elite ${val} !`
+            get('bottom').innerHTML = welcome
         }
     }
     const { el, get, add, set } = elite()
@@ -34,18 +35,25 @@
         el('p', 'A tiny declarative js DOM lib in 500 bytes'),
         el('br'),
         el('div', [
-            el('button', 'Hello', {}, { click: (e) => alert('Hello') }),
+            el('button', 'Hello', {}, { click: (e) => alert('YO !') }),
         ]),
         el('br'),
         el('form', '', {}, joinEvent, [
-            el('input', '', { id: 'input', placeholder: 'Your name', required: true }),
+            el('input', '', { id: 'input', placeholder: 'Name', required: true }),
             el('button', 'Join'),
         ]),
     ])
-    const bottom = add(page, el('div', [
-        el('p', 'The end'),
-    ]))
-
+    const bottom = add(page, el('p', '', { id: 'bottom' }))
     set('app', bottom)
+
+    // test performance
+    /*
+    let t0 = performance.now()
+    for (let i = 0; i < 1000000; i++) {
+        el('p', 'test' + i)
+    }
+    let t1 = performance.now()
+    console.log('let took ' + (t1 - t0) + ' milliseconds.')
+    */
 
 </script>
