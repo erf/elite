@@ -1,8 +1,8 @@
 function el(tag, ...args) {
-  let el = document.createElement(tag)
-  let ops = [
+  const el = document.createElement(tag)
+  const ops = [
     (html) => el.innerHTML = html,
-    (attributes) => Object.entries(attributes).forEach(([k, v]) => el.setAttribute(k, v)),
+    (attrs) => Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v)),
     (events) => Object.entries(events).forEach(([k, v]) => el.addEventListener(k, v)),
     (children) => children.forEach(child => el.appendChild(child)),
   ]
