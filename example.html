@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<title>elite - example</title>
+<title>elite - a tiny dom lib</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div id='app'></div>
@@ -9,14 +9,13 @@
     body {
         font-family: sans-serif;
     }
-
     .elite {
         color: red;
         font-weight: 400;
     }
 </style>
 
-<script src="elite.js"></script>
+<script src="elite.min.js"></script>
 <script>
     const formEvent = {
         submit: (e) => {
@@ -26,7 +25,7 @@
     }
     const page = el('section', [
         el('h1', 'elite', { class: 'elite' }),
-        el('p', 'neat DOM manipulation'),
+        el('p', 'tiny DOM manipulation'),
         el('form', '', {}, formEvent, [
             el('button', 'New game')
         ]),
