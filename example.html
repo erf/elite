@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 
-<title>elite - a tiny dom lib</title>
+<title>elite - tiny dom lib</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<div id='app'></div>
+<main id='app'></main>
 
 <style>
     body {
-        font-family: sans-serif;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .elite {
-        color: red;
-        font-weight: 400;
+        font-size: 44pt;
     }
 </style>
 
 <script src="elite.min.js"></script>
 <script>
-    const formEvent = {
+    const joinEvent = {
         submit: (e) => {
             e.preventDefault()
-            console.log('event!')
+            const val = get('input').value
+            alert(`Welcome to elite ${val} !`)
         }
     }
     const { el, get, add, set } = elite()
 
     const page = el('section', [
         el('h1', 'elite', { class: 'elite' }),
-        el('p', 'tiny DOM manipulation'),
-        el('form', '', {}, formEvent, [
-            el('button', 'New game')
+        el('p', 'A tiny declarative js DOM lib in 500 bytes'),
+        el('br'),
+        el('div', [
+            el('button', 'Hello', {}, { click: (e) => alert('Hello') }),
         ]),
         el('br'),
-        el('form', '', {}, formEvent, [
-            el('label', 'Join game', { for: 'code' }),
-            el('br'),
-            el('input', '', { id: 'code', placeholder: 'Enter code', required: true }),
-            el('br'),
+        el('form', '', {}, joinEvent, [
+            el('input', '', { id: 'input', placeholder: 'Your name', required: true }),
             el('button', 'Join'),
         ]),
-        el('br')
     ])
-    const bottom = add(page, el('div', 'bottom', [
-        el('p', 'added element')
+    const bottom = add(page, el('div', [
+        el('p', 'The end'),
     ]))
 
     set('app', bottom)
