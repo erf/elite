@@ -2,7 +2,7 @@
 
 tiny declarative javascript dom lib
 
-> < 8 KB minified and only 4 functions
+> ~ 506 bytes minified and only 4 functions
 
 ## API
 
