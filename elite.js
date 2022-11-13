@@ -1,3 +1,6 @@
+/**
+ * @namespace elite
+ */
 function elite() {
 
   let m = {};
@@ -5,7 +8,9 @@ function elite() {
   /**
    * Create an *element* given a *tag name* and an optional *innerHtml*, *attributes*, *events* and *children*.
    *
-   * Arguments after *tag* can be omitted and replaced with children as the last argument.
+   * Arguments after *tag* can be omitted or replaced with children as the last argument.
+   * 
+   * @memberof elite
    *
    * @param {string} tag - the tag name
    * @param {(string|Array.<Element>)} html - the innerHTML content or children
@@ -26,14 +31,18 @@ function elite() {
   }
 
   /**
-   * Get an element by id using document.getElementById.
+   * Get element by id using document.getElementById.
+   * 
+   * @memberof elite
    * 
    * @param {string} id - the element id
    */
   m.get = (id) => document.getElementById(id)
 
   /**
-   * Adds a child or an array of children to a parent element using appendChild.
+   * Appends a child or an array of children to a parent element using appendChild.
+   * 
+   * @memberof elite
    * 
    * @param {Element} parent - the parent Element
    * @param {Element|Array.<Element>} child - the Element or array of Elements we want to add to the parent
@@ -49,6 +58,8 @@ function elite() {
 
   /**
    * Replace the innerHTML of an element with an element or an array of elements.
+   * 
+   * @memberof elite
    *
    * @param {(Element|String)} parent - the parent element or element id
    * @param {(Element|Array.<Element>)} child - the child element or array of elements we want to set
