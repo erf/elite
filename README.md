@@ -19,6 +19,8 @@ const { el, get, add, set } = elite()
 ## Example
 
 ```Javascript
+const { el, get, add, set } = elite()
+
 const page = el('section', [
     el('h1', 'elite', { class: 'elite' }),
     el('p', 'Welcome to elite'),
