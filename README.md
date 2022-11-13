@@ -15,9 +15,14 @@ a tiny declarative js dom lib in ~500 bytes
 ## EXAMPLE
 
 ```Javascript
+const data = { 
+	title: 'elite',
+	description: 'a tiny declarative js dom lib'
+}
+
 const app = el('div', [
-    el('h1', 'elite', { class: 'elite' }),
-    el('p', 'a tiny declarative js dom lib'),
+    el('h1', data.title, { class: 'elite' }),
+    el('p', data.description),
     el('div', [
         el('button', 'YO', {}, { click: (e) => alert('YO !') }),
     ]),
@@ -25,6 +30,20 @@ const app = el('div', [
 
 set('app', app)
 
+```
+
+result
+
+```HTML
+<main id="app">
+    <div>
+        <h1 class="elite">elite</h1>
+        <p>a tiny declarative js dom lib</p>
+        <div>
+            <button>YO</button>
+        </div>
+    </div>
+</main>
 ```
 
 see [example.html](example.html)
