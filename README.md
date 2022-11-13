@@ -1,6 +1,6 @@
 # elite
 
-A tiny declarative JavaScript DOM library in 500 bytes
+tiny declarative js DOM lib in 500 bytes
 
 ## API
 
@@ -15,6 +15,9 @@ const { el, get, add, set } = elite()
 `get` shorthand for *document.getElementById*
 
 `add` appends a child or multiple children to a given element and returns the parent
+
+
+*Documentation can be generated using `jsdoc`*
 
 ## Example
 
