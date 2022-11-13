@@ -14,16 +14,16 @@ elite = () => {
     get: (id) => {
       return document.getElementById(id)
     },
+    set: (parent, child) => {
+      parent = typeof parent === 'string' ? get(parent) : parent
+      parent.innerHTML = ''
+      add(parent, child)
+    },
     add: (parent, children) => {
       Array.isArray(children)
         ? children.forEach(child => parent.appendChild(child))
         : parent.appendChild(children)
       return parent
-    },
-    set: (parent, child) => {
-      parent = typeof parent === 'string' ? get(parent) : parent
-      parent.innerHTML = ''
-      add(parent, child)
     },
   }
 }
