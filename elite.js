@@ -22,8 +22,8 @@ function elite() {
     let el = document.createElement(tag)
     let ops = [
       (html) => el.innerHTML = html,
-      (at) => Object.entries(at).forEach(([k, v]) => el.setAttribute(k, v)),
-      (ev) => Object.entries(ev).forEach(([k, v]) => el.addEventListener(k, v)),
+      (attributes) => Object.entries(attributes).forEach(([k, v]) => el.setAttribute(k, v)),
+      (events) => Object.entries(events).forEach(([k, v]) => el.addEventListener(k, v)),
       (children) => children.forEach(child => el.appendChild(child)),
     ]
     args.forEach((a, i) => Array.isArray(a) ? ops[3](a) : ops[i](a))
@@ -45,14 +45,14 @@ function elite() {
    * @memberof elite
    * 
    * @param {Element} parent - the parent Element
-   * @param {Element|Array.<Element>} child - the Element or array of Elements we want to add to the parent
+   * @param {Element|Array.<Element>} children - the Element or array of Elements we want to add to the parent
    * 
    * @returns {Element} The parent element
    */
-  m.add = (parent, child) => {
-    Array.isArray(child)
-      ? child.forEach(child => parent.appendChild(child))
-      : parent.appendChild(child)
+  m.add = (parent, children) => {
+    Array.isArray(children)
+      ? children.forEach(child => parent.appendChild(child))
+      : parent.appendChild(children)
     return parent
   }
 
@@ -62,7 +62,7 @@ function elite() {
    * @memberof elite
    *
    * @param {(Element|String)} parent - the parent element or element id
-   * @param {(Element|Array.<Element>)} child - the child element or array of elements we want to set
+   * @param {(Element|Array.<Element>)} children - the child element or array of elements we want to set
    */
   m.set = (parent, child) => {
     parent = typeof parent === 'string' ? get(parent) : parent
