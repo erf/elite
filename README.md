@@ -8,16 +8,13 @@ A tiny declarative JS DOM library in 480 bytes
 const { el, get, set, add } = elite()
 ```
 
-`el` creates an element given a *tag*, *html*, *attributes*, *events*, and
-*children*. args after *tag* can be omitted or replaced with *children*
+`el` - create an element given *tag*, *html*, *attributes*, *events*, and *children*. args after *tag* can be omitted or replaced with children
 
-`get` shorthand for *document.getElementById*
+`get` - get element by id
 
-`set` replaces the *innerHTML* of a parent element or id with the given child
-element(s)
+`set` - set a child / children to a parent given as an element or id
 
-`add` appends a child or multiple children to a given element and returns the
-parent
+`add` - append a child / children to a parent element
 
 ## Example
 
