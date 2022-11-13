@@ -1,6 +1,6 @@
 # elite
 
-A tiny declarative JavaScript DOM library in 500B (!)
+A tiny declarative JavaScript DOM library in 500 bytes
 
 ## API
 
