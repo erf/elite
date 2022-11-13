@@ -9,7 +9,7 @@ const { el, get, add, set } = elite()
 ```
 
 `el` creates an element given a *tag*, *html*, *attributes*, *events*, and
-*children*. Arguments after *tag* can be omitted or replaced with *children*
+*children*. args after *tag* can be omitted or replaced with *children*
 
 `set` replaces the *innerHTML* of a parent element or id with the given child
 element(s)
