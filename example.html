@@ -15,6 +15,13 @@
     .elite {
         font-size: 48pt;
     }
+    
+    .btn {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background: #fff;
+        cursor: pointer;
+    }
 </style>
 
 <main id='app'></main>
@@ -28,13 +35,12 @@
             get('bottom').innerHTML = `Hello ${val} ❤`
         }
     }
-    const { el, get, add, set } = elite()
 
     const app = el('div', [
         el('h1', 'elite', { class: 'elite' }),
-        el('p', 'A tiny declarative js DOM lib in 480 bytes'),
+        el('p', 'a tiny declarative js DOM lib'),
         el('div', [
-            el('button', 'YO', {}, { click: (e) => alert('YO !') }),
+            el('button', 'Press', { class: 'btn'}, { click: (e) => alert('YO') }),
         ]),
         el('br'),
         el('form', '', {}, joinEvent, [

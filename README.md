@@ -1,12 +1,8 @@
 # elite
 
-A tiny declarative JS DOM library in 480 bytes
+a tiny declarative js dom lib (~500 bytes)
 
 ## API
-
-```
-const { el, get, set, add } = elite()
-```
 
 `el` - create an element given *tag*, *html*, *attributes*, *events*, and *children*. args after *tag* can be omitted or replaced with children
 
@@ -16,14 +12,12 @@ const { el, get, set, add } = elite()
 
 `add` - append a child / children to a parent element
 
-## Example
+## EXAMPLE
 
 ```Javascript
-const { el, get, add, set } = elite()
-
 const app = el('div', [
     el('h1', 'elite', { class: 'elite' }),
-    el('p', 'A tiny declarative JS DOM lib in 480 bytes'),
+    el('p', 'a tiny declarative js dom lib'),
     el('div', [
         el('button', 'YO', {}, { click: (e) => alert('YO !') }),
     ]),
@@ -33,5 +27,5 @@ set('app', app)
 
 ```
 
-See [example.html](example.html)
+see [example.html](example.html)
 
