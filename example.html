@@ -25,8 +25,7 @@
         submit: (e) => {
             e.preventDefault()
             const val = get('input').value
-            const welcome = `Hello ${val} ❤`
-            get('bottom').innerHTML = welcome
+            get('bottom').innerHTML = `Hello ${val} ❤`
         }
     }
     const { el, get, add, set } = elite()
