@@ -1,6 +1,6 @@
 # elite
 
-tiny declarative js DOM lib in 500 bytes
+A tiny declarative JS DOM library in 480 bytes
 
 ## API
 
@@ -8,39 +8,32 @@ tiny declarative js DOM lib in 500 bytes
 const { el, get, add, set } = elite()
 ```
 
-`el` create an element given *tag*, *html*, *attributes*, *events*, and *children*. Arguments after *tag* can be omitted or replaced with *children*
+`el` creates an element given a *tag*, *html*, *attributes*, *events*, and
+*children*. Arguments after *tag* can be omitted or replaced with *children*
 
-`set` replaces the *innerHTML* of a parent element or id with the given child element(s)
+`set` replaces the *innerHTML* of a parent element or id with the given child
+element(s)
 
 `get` shorthand for *document.getElementById*
 
-`add` appends a child or multiple children to a given element and returns the parent
-
-
-*Documentation can be generated using `jsdoc`*
+`add` appends a child or multiple children to a given element and returns the
+parent
 
 ## Example
 
 ```Javascript
 const { el, get, add, set } = elite()
 
-const page = el('section', [
+const app = el('div', [
     el('h1', 'elite', { class: 'elite' }),
-    el('p', 'Welcome to elite'),
-    el('form', '', {}, someEvent, [
-        el('button', 'New game')
-    ]),
-    el('br'),
-    el('form', '', {}, anotherEvent, [
-        el('label', 'Join game', { for: 'code' }),
-        el('br'),
-        el('input', '', { id: 'code', placeholder: 'Enter code', required: true }),
-        el('br'),
-        el('button', 'Join'),
+    el('p', 'A tiny declarative JS DOM lib in 480 bytes'),
+    el('div', [
+        el('button', 'YO', {}, { click: (e) => alert('YO !') }),
     ]),
 ])
 
-set('page', page))
+set('app', app)
+
 ```
 
 See [example.html](example.html)

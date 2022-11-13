@@ -14,7 +14,7 @@
     }
 
     .elite {
-        font-size: 44pt;
+        font-size: 48pt;
     }
 </style>
 
@@ -24,27 +24,26 @@
         submit: (e) => {
             e.preventDefault()
             const val = get('input').value
-            const welcome = `Welcome to elite ${val} !`
+            const welcome = `Hello ${val} ❤`
             get('bottom').innerHTML = welcome
         }
     }
     const { el, get, add, set } = elite()
 
-    const page = el('section', [
+    const app = el('div', [
         el('h1', 'elite', { class: 'elite' }),
-        el('p', 'A tiny declarative js DOM lib in 500 bytes'),
-        el('br'),
+        el('p', 'A tiny declarative js DOM lib in 480 bytes'),
         el('div', [
-            el('button', 'Hello', {}, { click: (e) => alert('YO !') }),
+            el('button', 'YO', {}, { click: (e) => alert('YO !') }),
         ]),
         el('br'),
         el('form', '', {}, joinEvent, [
             el('input', '', { id: 'input', placeholder: 'Name', required: true }),
             el('button', 'Join'),
         ]),
+        el('p', '', { id: 'bottom' })
     ])
-    const bottom = add(page, el('p', '', { id: 'bottom' }))
-    set('app', bottom)
+    set('app', app)
 
     // test performance
     /*
