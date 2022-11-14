@@ -16,8 +16,8 @@ a tiny declarative js dom lib in ~500 bytes
 
 ```Javascript
 const data = { 
-	title: 'elite',
-	description: 'a tiny declarative js dom lib'
+    title: 'elite',
+    description: 'a tiny declarative js dom lib'
 }
 
 const app = el('div', [
