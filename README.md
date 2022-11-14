@@ -32,7 +32,7 @@ set('app', app)
 
 ```
 
-result
+resulting HTML
 
 ```HTML
 <main id="app">
@@ -46,5 +46,7 @@ result
 </main>
 ```
 
-see [example.html](example.html)
+see example [example.html](example.html)
+
+github.io [https://erf.github.io/elite](https://erf.github.io/elite)
 
