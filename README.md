@@ -8,9 +8,9 @@ a tiny declarative js dom lib in ~500 bytes
 
 `get` - get element by id
 
-`set` - set a child / children to a parent given as an element or id
-
 `add` - append a child / children to a parent element
+
+`set` - set a child / children to a parent given as an element or id
 
 ## EXAMPLE
 
