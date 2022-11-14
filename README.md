@@ -46,7 +46,7 @@ resulting HTML
 </main>
 ```
 
-see example [example.html](example.html)
+example [example.html](example.html)
 
 github.io [https://erf.github.io/elite](https://erf.github.io/elite)
 
