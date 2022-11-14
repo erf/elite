@@ -22,7 +22,7 @@ const data = {
 
 const app = el('div', [
     el('h1', data.title, { class: 'elite' }),
-    el('p', data.description),
+    el('p', data.description, { style: "background: #ffe088; padding: 8pt;" }),
     el('div', [
         el('button', 'YO', {}, { click: (e) => alert('YO !') }),
     ]),

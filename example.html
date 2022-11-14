@@ -32,7 +32,7 @@
         submit: (e) => {
             e.preventDefault()
             const val = get('input').value
-            get('bottom').innerHTML = `Hello ${val} ❤`
+            get('bottom').innerHTML = `Welcome ${val} ❤`
         }
     }
 
@@ -43,18 +43,18 @@
 
     const app = el('div', [
         el('h1', data.title, { class: 'elite' }),
-        el('p', data.description),
+        el('p', data.description, { style: "background: #ffe088; padding: 8pt;" }),
         el('div', [
             el('button', 'Press', { class: 'btn' }, { click: (e) => alert('YO') }),
         ]),
         el('br'),
         el('form', '', {}, joinEvent, [
             el('input', '', { id: 'input', placeholder: 'Name', required: true }),
-            el('button', 'Join'),
+            el('button', 'Join', { class: 'btn', style: "margin-left: 8pt;" }),
         ]),
         el('p', '', { id: 'bottom' })
     ])
-    
+
     set('app', app)
 
     // test performance
