@@ -4,7 +4,7 @@ a tiny declarative js dom lib in ~500 bytes
 
 ## API
 
-`el` - create an element given *tag*, *html*, *attributes*, *events*, and *children*. args after *tag* can be omitted or replaced with children
+`el` - create an element given *tag*, *text*, *attributes*, *events*, and *children*. args after *tag* can be omitted or replaced with children
 
 `get` - get element by id
 
