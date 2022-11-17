@@ -1,6 +1,6 @@
 # elite
 
-a tiny declarative js dom lib in ~500 bytes
+A tiny (~500 bytes) js lib for building html elements declaratively.
 
 ## API
 
@@ -15,14 +15,9 @@ a tiny declarative js dom lib in ~500 bytes
 ## EXAMPLE
 
 ```Javascript
-const data = { 
-    title: 'elite',
-    description: 'a tiny declarative js dom lib'
-}
-
 const app = el('div', [
-    el('h1', data.title, { class: 'elite' }),
-    el('p', data.description, { style: "background: #ffe088; padding: 8pt;" }),
+    el('h1', 'elite', { class: 'elite' }),
+    el('p', 'a tiny declarative js dom lib', { style: "background: #ffe088; padding: 8pt;" }),
     el('div', [
         el('button', 'YO', {}, { click: (e) => alert('YO !') }),
     ]),
