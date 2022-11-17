@@ -1,12 +1,20 @@
 function el(tag, ...args) {
   const el = document.createElement(tag)
-  const ops = [
-    (text) => el.textContent = text,
-    (attrs) => Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v)),
-    (events) => Object.entries(events).forEach(([k, v]) => el.addEventListener(k, v)),
-    (children) => children.forEach(child => el.appendChild(child)),
-  ]
-  args.forEach((a, i) => Array.isArray(a) ? ops[3](a) : ops[i](a))
+  let is_attr = true
+  for (let arg of args) {
+    if (typeof arg === 'string') {
+      el.textContent = arg
+    } else if (Array.isArray(arg)) {
+      arg.forEach(child => el.appendChild(child))
+    } else {
+      if (is_attr) {
+        is_attr = false
+        Object.entries(arg).forEach(([k, v]) => el.setAttribute(k, v))
+      } else {
+        Object.entries(arg).forEach(([k, v]) => el.addEventListener(k, v))
+      }
+    }
+  }
   return el
 }
 

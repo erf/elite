@@ -48,11 +48,11 @@
             el('button', 'Press', { class: 'btn' }, { click: (e) => alert('YO') }),
         ]),
         el('br'),
-        el('form', '', {}, joinEvent, [
-            el('input', '', { id: 'input', placeholder: 'Name', required: true }),
+        el('form', {}, joinEvent, [
+            el('input', { id: 'input', placeholder: 'Name', required: true }),
             el('button', 'Join', { class: 'btn', style: "margin-left: 8pt;" }),
         ]),
-        el('p', '', { id: 'bottom' })
+        el('p', { id: 'bottom' })
     ])
 
     set('app', app)
