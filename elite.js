@@ -31,6 +31,5 @@ function add(parent, children) {
 
 function set(parent, child) {
   parent = typeof parent === 'string' ? get(parent) : parent
-  parent.innerHTML = ''
-  add(parent, child)
+  parent.replaceChildren(child);
 }
