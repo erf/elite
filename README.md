@@ -8,19 +8,20 @@ A tiny JavaScript library for building HTML elements declaratively.
 
 `el(tag, text, attributes, events, children)`
 
-> Create a HTML element. Arguments after **tag** can be omitted or replaced with **children** 
-
+> Create an HTML element. Arguments after **tag** can be omitted or replaced with **children** . Note that elements can be nested by passing an array of child elements. `attributes` and `events` are objects.
 `get(id)`
 
 > Get element by **id**
 
-`set(id|element, child)`
+`set(element|id, child)`
 
 > Given an **element** or **id**, replace it's children with a given **child** element
 
-`add(id|elemnt, child)`
+`add(elemnt|id, child)`
 
 > Given an **element** or **id** append a **child** element
+
+*Please read the code to understand more, it's quite simple!*
 
 ## EXAMPLE
 
@@ -54,4 +55,3 @@ Result HTML:
 [example.html](example.html)
 
 [https://erf.github.io/elite](https://erf.github.io/elite)
-
