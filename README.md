@@ -4,7 +4,7 @@ A tiny JavaScript library for building HTML elements declaratively.
 
 > in only 475 bytes
 
-## API
+# API
 
 `el(tag, text, attributes, events, children)`
 
@@ -33,6 +33,7 @@ const app = el('div', [
     el('div', [
         el('button', 'YO', {}, { click: (e) => alert('YO !') }),
     ]),
+    el('p', 'Made with ❤ by @apptakk'),
 ])
 
 set('app', app)
@@ -49,6 +50,7 @@ Result HTML:
         <div>
             <button>YO</button>
         </div>
+        <p>Made with ❤ by @apptakk</p>
     </div>
 </main>
 ```
