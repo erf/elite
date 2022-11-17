@@ -1,6 +1,6 @@
 # elite
 
-A tiny JavaScript library for building HTML elements declaratively.
+A tiny JavaScript library for building HTML declaratively.
 
 # API
 
