@@ -48,6 +48,15 @@
             el('button', 'Press', { class: 'btn' }, { click: (e) => alert('YO') }),
         ]),
         el('br'),
+        // build 3 levels of nested elements as divs
+        el('div', 'lvl 1', [
+            el('div', 'lvl 2', [
+                el('div', 'lvl 3', [
+                    el('div', 'nested divs', { style: "font-weight: 800;" })
+                ])
+            ])
+        ]),
+        el('br'),
         el('form', {}, joinEvent, [
             el('input', { id: 'input', placeholder: 'Name', required: true }),
             el('button', 'Join', { class: 'btn', style: "margin-left: 8pt;" }),
