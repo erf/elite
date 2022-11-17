@@ -12,7 +12,7 @@ A tiny JavaScript library for building HTML elements declaratively.
 
 `get(id)`
 
-> Get an element by **id***. Short for `getElementById`.
+> Get an element by **id**. Short for `getElementById`.
 
 `set(id|element, child)`
 
