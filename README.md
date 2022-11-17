@@ -2,7 +2,7 @@
 
 A tiny JavaScript library for building HTML elements declaratively.
 
-> in only 475 bytes (!)
+> in only 475 bytes
 
 ## API
 
