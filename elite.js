@@ -30,5 +30,4 @@ function set(parent, child) {
 function add(parent, child) {
   parent = typeof parent === 'string' ? get(parent) : parent
   parent.append(child)
-  return parent
 }
