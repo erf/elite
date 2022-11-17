@@ -6,19 +6,19 @@ A tiny JavaScript library for building HTML elements.
 
 `el(tag, text, attributes, events, children)`
 
-Create a new HTML element. Arguments after **tag** can be omitted or replaced with **children**. 
+> Create a new HTML element. Arguments after **tag** can be omitted or replaced with **children**. 
 
 `get(id)`
 
-Get an element by **id***. Short for `getElementById`.
+> Get an element by **id***. Short for `getElementById`.
 
 `set(id|element, child)`
 
-Given an **element** or **id**, replace it's children with a given **child** element. 
+> Given an **element** or **id**, replace it's children with a given **child** element. 
 
 `add(id|elemnt, child)`
 
-Given an **element** or **id** append a **child** element.
+> Given an **element** or **id** append a **child** element.
 
 ## EXAMPLE
 
