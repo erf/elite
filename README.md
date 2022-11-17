@@ -2,8 +2,6 @@
 
 A tiny JavaScript library for building HTML elements declaratively.
 
-> in only 475 bytes
-
 # API
 
 `el(tag, text, attributes, events, children)`
@@ -16,7 +14,7 @@ A tiny JavaScript library for building HTML elements declaratively.
 
 `set(element|id, child)`
 
-> Given an **element** or **id**, replace it's children with a given **child** element
+> Given an **element** or **id**, replace it's children with a given **child** element(s)
 
 `add(elemnt|id, child)`
 
@@ -61,3 +59,4 @@ Result HTML:
 
 
 I've built a slightly more descriptive, but less compact, version of this library in [elite-plus](https://github.com/erf/elite-plus)
+

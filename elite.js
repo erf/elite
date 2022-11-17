@@ -24,10 +24,18 @@ function get(id) {
 
 function set(parent, child) {
   parent = typeof parent === 'string' ? get(parent) : parent
-  parent.replaceChildren(child);
+  if (Array.isArray(child)) {
+    parent.replaceChildren(...child)
+  } else {
+    parent.replaceChildren(child)
+  }
 }
 
 function add(parent, child) {
   parent = typeof parent === 'string' ? get(parent) : parent
-  parent.append(child)
+  if (Array.isArray(child)) {
+    parent.append(...child)
+  } else {
+    parent.append(child)
+  }
 }
