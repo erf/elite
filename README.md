@@ -8,9 +8,9 @@ A tiny (~500 bytes) js lib for building html elements declaratively.
 
 `get` - get element by *id*
 
-`set` - replace the children of a given id or element with a child
+`set` - given an element (or id) replace it's children with a given element
 
-`add` - append a child / children to a parent element
+`add` - given an element (or id) append a child element
 
 ## EXAMPLE
 

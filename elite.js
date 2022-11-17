@@ -27,9 +27,8 @@ function set(parent, child) {
   parent.replaceChildren(child);
 }
 
-function add(parent, children) {
-  Array.isArray(children)
-    ? children.forEach(child => parent.appendChild(child))
-    : parent.appendChild(children)
+function add(parent, child) {
+  parent = typeof parent === 'string' ? get(parent) : parent
+  parent.append(child)
   return parent
 }
