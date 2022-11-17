@@ -57,8 +57,10 @@
 
     set('app', app)
 
-    add('app', el('p', 'Made with ❤ by @apptakk', { style: "margin-top: 24pt; color: #9999; font-size: 13px" }))
+    add('app', el('a', 'github', { href: 'https://github.com/erf/elite', target: '_blank' }))
 
+    add('app', el('p', 'Made with ❤ by @apptakk', { style: "margin-top: 24pt; color: #9999; font-size: 13px" }))
+    
     // test performance
     /*
     let t0 = performance.now()
