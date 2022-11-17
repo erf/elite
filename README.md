@@ -4,13 +4,13 @@ A tiny (~500 bytes) js lib for building html elements declaratively.
 
 ## API
 
-`el` - create an element given *tag*, *text*, *attributes*, *events*, and *children*. args after *tag* can be omitted or replaced with children
+`el` - create a new element given a *tag*, *text*, *attributes*, *events*, and *children*. arguments after *tag* can be omitted or replaced with *children*
 
-`get` - get element by id
+`get` - get element by *id*
+
+`set` - replace the children of a given id or element with a child
 
 `add` - append a child / children to a parent element
-
-`set` - set a child / children to a parent given as an element or id
 
 ## EXAMPLE
 

@@ -22,14 +22,14 @@ function get(id) {
   return document.getElementById(id)
 }
 
+function set(parent, child) {
+  parent = typeof parent === 'string' ? get(parent) : parent
+  parent.replaceChildren(child);
+}
+
 function add(parent, children) {
   Array.isArray(children)
     ? children.forEach(child => parent.appendChild(child))
     : parent.appendChild(children)
   return parent
-}
-
-function set(parent, child) {
-  parent = typeof parent === 'string' ? get(parent) : parent
-  parent.replaceChildren(child);
 }
