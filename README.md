@@ -58,5 +58,5 @@ Result HTML:
 [https://erf.github.io/elite](https://erf.github.io/elite)
 
 
-I've built a slightly more descriptive, but less compact, version of this library in [elite-plus](https://github.com/erf/elite-plus)
+PS: I've built a slightly more descriptive, but less compact, version of this library called [elite-plus](https://github.com/erf/elite-plus)
 
