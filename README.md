@@ -1,16 +1,24 @@
 # elite
 
-A tiny (~500 bytes) js lib for building html elements declaratively.
+A tiny JavaScript library for building HTML elements.
 
 ## API
 
-`el` - create a new element given a *tag*, *text*, *attributes*, *events*, and *children*. arguments after *tag* can be omitted or replaced with *children*
+`el(tag, text, attributes, events, children)`
 
-`get` - get element by *id*
+Create a new HTML element. Arguments after **tag** can be omitted or replaced with **children**. **attributes** and **events** are objects and **children** is an array of other elements.
 
-`set` - given an element (or id) replace it's children with a given element
+`get(id)`
 
-`add` - given an element (or id) append a child element
+Get an element by **id***. Short for `getElementById`.
+
+`set(id|element, child)`
+
+Given an **element** or **id**, replace it's children with a given **child** element. Use to inject / replace elements into the exicting web page.
+
+`add(id|elemnt, child)`
+
+Given an **element** or **id** append a **child** element.
 
 ## EXAMPLE
 
@@ -27,7 +35,7 @@ set('app', app)
 
 ```
 
-resulting HTML
+Result HTML:
 
 ```HTML
 <main id="app">
@@ -41,7 +49,7 @@ resulting HTML
 </main>
 ```
 
-example [example.html](example.html)
+[example.html](example.html)
 
-github.io [https://erf.github.io/elite](https://erf.github.io/elite)
+[https://erf.github.io/elite](https://erf.github.io/elite)
 
