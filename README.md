@@ -14,11 +14,11 @@ A tiny JavaScript library for building HTML declaratively.
 
 `set(element|id, child)`
 
-> Given an **element** or **id**, replace it's children with a given **child** element(s)
+> Given an **element** or **id**, replace children with a given **child** element(s)
 
 `add(elemnt|id, child)`
 
-> Given an **element** or **id** append a **child** element
+> Given an **element** or **id**, append a **child** element(s)
 
 *Please read the code to understand more, it's quite simple!*
 
