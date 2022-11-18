@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="UTF-8">
+<title>TODO</title>
+
+<style>
+	body {
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#input {
+		margin-bottom: 8pt;
+		padding: 4pt;
+	}
+
+	#add {
+		border: 0px solid #0000;
+		padding: 4pt;
+		margin-left: 8pt;
+	}
+</style>
+
+<div id="app"></div>
+
+<script src="elite.js"></script>
+<script>
+	const addTask = (e) => {
+		e.preventDefault();
+		const task =  get('input').value
+		if (!task) return
+		input.value = ''
+		add('list', el('p', task))
+	}
+	set('app',  [
+		el('h1', 'TODO'),
+		el('form', {}, { submit: addTask }, [
+			el('input', { id: 'input', type: 'text', placeholder: 'Enter task', required: true, autofocus: true }),
+			el('button', 'Add', { id: 'add', type: 'submit'  })
+		]),
+		el('div', { id: 'list' }),
+	])
+</script>
