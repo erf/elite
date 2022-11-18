@@ -28,14 +28,6 @@
 
 <script src="elite.js"></script>
 <script>
-    const joinEvent = {
-        submit: (e) => {
-            e.preventDefault()
-            const val = get('input').value
-            get('bottom').innerHTML = `Welcome ${val} ❤`
-        }
-    }
-
     const data = {
         title: 'elite',
         description: 'a tiny declarative js dom lib'
@@ -48,7 +40,12 @@
             el('button', 'Press', { class: 'btn' }, { click: (e) => alert('YO') }),
         ]),
         el('br'),
-        el('form', {}, joinEvent, [
+        el('form', {}, {
+            submit: (e) => {
+                e.preventDefault()
+                get('bottom').textContent = `Welcome ${get('input').value} ❤`
+            }
+        }, [
             el('input', { id: 'input', placeholder: 'Name', required: true }),
             el('button', 'Join', { class: 'btn', style: "margin-left: 8pt;" }),
         ]),
@@ -60,7 +57,7 @@
     add('app', el('a', 'github', { href: 'https://github.com/erf/elite', target: '_blank' }))
 
     add('app', el('p', 'Made with ❤ by @apptakk', { style: "margin-top: 24pt; color: #9999; font-size: 13px" }))
-    
+
     // test performance
     /*
     let t0 = performance.now()
