@@ -6,7 +6,7 @@ A tiny JavaScript library for building HTML declaratively.
 
 `el(tag, text, attributes, events, children)`
 
-> Create an HTML element. Arguments after **tag** can be omitted or replaced with **children** . Note that elements can be nested by passing an array of child elements. `attributes` and `events` are objects.
+> Creates an HTML element. Arguments after **tag** can be omitted and replaced with **children**. You can also omit `text` and pass the next arguments. Elements can be nested using children. 
 
 `get(id)`
 
