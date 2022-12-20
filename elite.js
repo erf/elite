@@ -1,14 +1,14 @@
 function el(tag, ...args) {
   const el = document.createElement(tag)
-  let is_attributes = true
+  let attr_set
   for (let arg of args) {
     if (typeof arg === 'string') {
       el.textContent = arg
     } else if (Array.isArray(arg)) {
       arg.forEach(child => el.appendChild(child))
     } else {
-      if (is_attributes) {
-        is_attributes = false
+      if (!attr_set) {
+        attr_set = true
         Object.entries(arg).forEach(([k, v]) => el.setAttribute(k, v))
       } else {
         Object.entries(arg).forEach(([k, v]) => el.addEventListener(k, v))
